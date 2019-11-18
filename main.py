@@ -78,7 +78,7 @@ try:
             print("command from user {}: {}".format(message.author,message.content.replace('>','',1)))
 
 
-            #now for the command handling
+            """now for the command handling"""
             
             #if the command is >ping
             if command=="ping":
@@ -313,9 +313,6 @@ e.g. >reset
                 except KeyError:
                     pass
                     print('timer exceded')
-            
-            else:
-                pass
 
     #now that the rest of the code is out of the way, it's time to start the bot
     client.run(token)
@@ -323,8 +320,8 @@ e.g. >reset
 #handles anything that might interrupt the code
 #it will back up player_data to its storage file before closing
 except:
+
     data=open('data.py','w')
     data.truncate()
     data.write("player_data={}".format(player_data))
     data.close()
-
