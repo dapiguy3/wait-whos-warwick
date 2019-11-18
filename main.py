@@ -108,7 +108,7 @@ Pong!
                         player_data[message.author.id]=[formatted_summoner_name,message.author.nick,int(time.time())]
 
                         #this block opens data.py, clears it, then writes the updated dictionary to it
-                        await update_file()
+                        update_file()
 
                         #lets the user knows that command worked
                         await message.channel.send(
@@ -217,7 +217,6 @@ e.g. >reset
 
             #api call for live match data
             response_2=requests.get("https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/{}{}".format(encrypted_summoner_id,api_key))
-
             #if there is no live match data available
             if response_2.status_code==404:
                 
